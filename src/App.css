@@ -1,38 +1,251 @@
+/* App.css - Estilo alternativo para portafolio */
+
+:root {
+  --bg-primary: #f8f9fc;
+  --bg-secondary: #ffffff;
+  --accent: #ff3d00;
+  --accent-light: #ff7539;
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --border: #e2e8f0;
+  --shadow: rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.7;
+  background-image: url('../public/images/ducks.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .App {
-  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Header con borde lateral */
+header {
+  padding: 5rem 0 3rem;
+  position: relative;
+  border-left: 5px solid var(--accent);
+  padding-left: 2rem;
+  margin-bottom: 3.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 60px;
+  height: 6px;
+  background-color: var(--accent);
+}
+
+header p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Secciones */
+section {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+  display: inline-block;
+  border-bottom: 3px solid var(--accent);
+  padding-bottom: 0.5rem;
+}
+
+/* About Me */
+#about-me {
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+#about-me p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+}
+
+/* Proyectos y Experiencia */
+#experiencie ul,
+#projects ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+#experiencie li,
+#projects li {
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  padding: 1.75rem;
+  box-shadow: 0 4px 15px var(--shadow);
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--border);
+}
+
+#experiencie li:hover,
+#projects li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--accent);
+}
+
+#experiencie h3,
+#projects h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+#experiencie h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+#experiencie p,
+#projects p {
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+
+/* Contacto */
+#contact {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding: 2rem;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+#contact a {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  transition: all 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+#contact a:hover {
+  background-color: var(--accent);
+  transform: translateY(-5px);
 }
 
-@keyframes App-logo-spin {
+#contact img {
+  width: 25px;
+  height: 25px;
+  transition: filter 0.3s ease;
+}
+
+#contact a:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* Enlaces */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header {
+    padding: 3rem 0 2rem;
+    padding-left: 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  #experiencie ul,
+  #projects ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Animación al cargar */
+@keyframes slideUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+
+.App>* {
+  animation: slideUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.App>*:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.App>*:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.App>*:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.App>*:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.App>*:nth-child(5) {
+  animation-delay: 0.5s;
 }
