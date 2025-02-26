@@ -26,7 +26,7 @@ function Projects() {
     { nombre: 'SCRAPING AWS', 
       tools: 'Python, AWS(Lambda, S3, CloudFornt, CodePipeline, ACM, Api Gateway, EventBridge)', 
       descripcion: 'Scraping utilizando servicios de AWS',
-      enlace:'https://www.leoinfo.es/',
+      enlace:'https://d2u97t2v5sywk5.cloudfront.net/ScrapingFront/index.html',
       textoEnlace:'enlace de la web',
       github:'https://github.com/tefkat1521/scrapingFront'
     },
