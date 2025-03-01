@@ -31,7 +31,7 @@ function Projects() {
       github:'https://github.com/tefkat1521/scrapingFront'
     },
     { nombre: 'Incidencias Pío Baroja', 
-      tools: 'PHP, Javascript, JQuery, SQL', 
+      tools: 'Javascript, JQuery, SQL, PHP', 
       descripcion: 'Gestor de incidencias IT del instituto Pío Baroja.',
       enlace: '',
       textoEnlace: '',
