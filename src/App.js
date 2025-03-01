@@ -23,7 +23,7 @@ function AboutMe() {
 
 function Projects() {
   const proyectos = [
-    { nombre: 'SCRAPING AWS', 
+    { nombre: 'WEB SCRAPING Utilizando servicios de AWS', 
       tools: 'Python, AWS(Lambda, S3, CloudFornt, CodePipeline, ACM, Api Gateway, EventBridge)', 
       descripcion: 'Scraping utilizando servicios de AWS',
       enlace:'https://d2u97t2v5sywk5.cloudfront.net/ScrapingFront/index.html',
